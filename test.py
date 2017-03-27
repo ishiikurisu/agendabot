@@ -15,6 +15,11 @@ class TestAgenda(unittest.TestCase):
     no_files = len(only_files)
     self.assertEqual(no_files, 0)
 
+  def test_trying_to_get_incomplete_event(self):
+    agenda = Agenda()
+    with self.assertRaises(RuntimeError):
+      agenda.get_time({ })
+
   def test_trying_to_get_past_event(self):
     moment = self.get_past_event()
     agenda = Agenda()

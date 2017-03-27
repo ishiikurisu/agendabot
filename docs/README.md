@@ -25,7 +25,7 @@ Destroys all marked events on the calendar. Not advised to use.
 
 #### `get_time(moment)`
 
-Gets what event is happning on that moment. Moment must be a dictionary as follows:
+Gets what event is happenning on that moment. Moment must be a dictionary as follows:
 
 - `'date'` will return a string in YYYYMMDD format asking for which day to look for.
 - `'hour'` will return a list of two integers specifying from which hour to which hour (in 24h format) the user wants to query.

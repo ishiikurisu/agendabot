@@ -13,6 +13,13 @@ class Agenda:
     outlet = [ ]
 
     if ('date' not in moment) and ('hour' not in moment):
-       raise RuntimeError()
+       raise ValueError()
+
+    # TODO Actually get the event
 
     return outlet
+
+  def set_time(self, event):
+    if ('date' not in event) and ('hour' not in event) and ('description' not in event):
+      raise ValueError()
+    # TODO Save event

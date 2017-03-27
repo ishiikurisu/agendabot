@@ -30,7 +30,7 @@ Gets what event is happenning on that moment. Moment must be a dictionary as fol
 - `'date'` will return a string in YYYYMMDD format asking for which day to look for.
 - `'hour'` will return a list of two integers specifying from which hour to which hour (in 24h format) the user wants to query.
 
-If this moment dictionary does not have these keys, the method will raise a `RuntimeError`.
+If this moment dictionary does not have these keys, the method will raise a `ValueError`.
 
 If no event is happenning in that moment is happenning in that moment, this method will return an empty list. Otherwise a list of events will be given.
 
@@ -41,6 +41,8 @@ Sets an event through a dictionary:
 - `'date'` must return a string in YYYYMMDD format asking for which day to book.
 - `'hour'` must return a list of two integers specifying from which hour to which hour (in 24h format) the user wants to book.
 - `'description'` must return an Unicode string describing what is being booked in that day.
+
+If this moment dictionary does not have these keys, the method will raise a `ValueError`.
 
 If an event is happenning in that moment, the method will raise a `RuntimeError`. Otherwise, nothing happens and the event is marked on the calendar.
 

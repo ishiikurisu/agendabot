@@ -1,13 +1,13 @@
-import agenda.Model as M
+import agenda.Filesystem as fs
 
 class Agenda:
   def __init__(self):
     pass
 
   def clear(self):
-    files = M.get_files('data')
+    files = fs.get_files('data')
     for f in files:
-      M.remove_file('data/' + f)
+      fs.remove_file('data/' + f)
 
   def get_time(self, moment):
     outlet = [ ]

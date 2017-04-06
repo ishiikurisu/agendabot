@@ -1,6 +1,6 @@
 # Introduction
 
-The idea of the `Agenda` class is to work like a agenda to mark who is responsible for that moment in the room. For the outside user, some rules must be clear when they use this class:
+The idea of the `Agenda` class is to work like a schedule to mark who is responsible for that moment in the room. For the outside user, some rules must be clear when they use this class:
 
 - The user must (at least ideally) check if the room is available before marking a time. If that time is free, then this user can mark an _event_ on the calendar.
 - Everyone can mark events using the agendabot, but only the creators of an event can unmark it.

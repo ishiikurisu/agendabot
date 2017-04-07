@@ -30,7 +30,16 @@ class Agenda:
 
   def generate_event(self, event):
     # TODO Generate a list of events, each item with a hour event
-    return [ ]
+    hour_limits = list(map(int, event['hour']))
+    lower_limit = hour_limits[0]
+    upper_limit = hour_limits[1]
+    hourly_events = [ ]
+
+    for hour in range(lower_limit, upper_limit):
+      table_line = '%d;%s' % (hour, event['description'])
+      hourly_events.append(table_line)
+
+    return hourly_events
 
   def get_current_day_file(date):
     return 'data/' + date + '.csv'

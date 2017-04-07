@@ -45,10 +45,10 @@ class TestAgenda(unittest.TestCase):
     event = self.get_real_event()
     agenda = Agenda()
     list_of_events = agenda.generate_event(event)
-    string_of_events = reduce(lambda box, it: '%s%s\n' % (box, it), list_of_events)
-    self.assertEqual('''10;nothing actually
-11;nothing actually
-12;nothing actually''', string_of_events)
+    string_of_events = ''
+    for event in list_of_events:
+      string_of_events += event + '\n'
+    self.assertEqual('10;nothing actually\n11;nothing actually\n', string_of_events)
 
   def get_past_event(self):
     return {

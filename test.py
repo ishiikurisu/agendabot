@@ -50,6 +50,22 @@ class TestAgenda(unittest.TestCase):
       string_of_events += event + '\n'
     self.assertEqual('10;nothing actually\n11;nothing actually\n', string_of_events)
 
+  def test_try_to_retrieve_an_inexistent_event(self):
+    agenda = Agenda()
+    agenda.clear()
+    fake_event = self.get_overlapping_event()
+    events = agenda.get_time(fake_event)
+    self.assertEqual(0, len(events))
+
+  def test_try_to_overwrite_an_event(self):
+    agenda = Agenda()
+    agenda.clear()
+    real_event = self.get_real_event()
+    agenda.set_time(real_event)
+    fake_event = self.get_overlapping_event()
+    with self.assertRaises(RuntimeError):
+      agenda.set_time(fake_event)
+
   def get_past_event(self):
     return {
       'date': '19940525',
@@ -61,6 +77,13 @@ class TestAgenda(unittest.TestCase):
       'date': '20190813',
       'hour': [10, 12],
       'description': 'nothing actually'
+    }
+
+  def get_overlapping_event(self):
+    return {
+      'date': '20190813',
+      'hour': [11, 13],
+      'description': 'this is an overlapping event'
     }
 
 if __name__ == '__main__':

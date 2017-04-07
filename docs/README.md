@@ -49,3 +49,7 @@ If an event is happenning in that moment, the method will raise a `RuntimeError`
 #### `destroy_event(moment)`
 
 Frees an event from the calendar. The moment must be described just like you get an event.
+
+#### `generate_event(event)`
+
+Creates a list of hourly events to be inserted in the data file.

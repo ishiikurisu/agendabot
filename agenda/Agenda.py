@@ -15,7 +15,6 @@ class Agenda:
     if ('date' not in moment) and ('hour' not in moment):
        raise ValueError()
 
-    # TODO Actually get the event
     file_name = self.get_current_day_file(moment['date'])
     lines = fs.load_file_to_lines(file_name)
     hours_to_query = list(range(moment['hour'][0], moment['hour'][1] + 1))

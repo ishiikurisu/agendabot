@@ -1,5 +1,8 @@
 default: test
 
+deps:
+	pip install --upgrade google-api-python-client
+
 do:
 	python main.py
 
